@@ -22,7 +22,7 @@ interface SchemaRow {
 }
 
 async function bootstrap(): Promise<void> {
-  const app = await NestFactory.create(AppModule);
+  const app = await NestFactory.create(AppModule, { cors: true });
   const configService = app.get(ConfigService<AllConfigType>);
 
   app.enableShutdownHooks();
